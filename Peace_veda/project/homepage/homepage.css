@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;400;500;600&display=swap");
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Roboto Flex", sans-serif;
+  background-color: #fdfdfd;
+  color: #111;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+nav {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 2rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 8px 20px -5px,
+    rgba(0, 0, 0, 0.2) 0px 5px 15px -8px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.options {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.8rem;
+  color: #111;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  background-color: rgba(173, 200, 123, 0.85);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #000000;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .options {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  nav ul li a {
+    display: block;
+    width: 100%;
+  }
+}
+.hero {
+  background-image: url(./images/Hero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 85vh; /* large screens */
+  width: 100%;
+  display: flex; /* so we can center content */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem; /* safe padding for small screens */
+  color: white; /* text color contrast */
+  text-align: center; /* optional for centered content */
+}
+
+/* ✅ Responsive height adjustment */
+@media (max-width: 1024px) {
+  .hero {
+    min-height: 70vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 50vh;
+    padding: 1rem;
+  }
+}
+.hero__h2 {
+  font-size: 2rem;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+
+  opacity: 0; /* start invisible */
+  transform: translateY(30px); /* start slightly below */
+  animation: fadeSlideIn 1.2s ease-out forwards; /* run animation */
+}
+
+/* Keyframes */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.thought {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #969393c6;
+  max-width: 630px;
+  line-height: 1.6;
+  display: block;
+  margin: 0 auto;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 1.2s ease-out forwards;
+  animation-delay: 0.6s; /* delay so it comes after h2 */
+}
+
+/* Responsive scaling */
+@media (max-width: 768px) {
+  .hero__h2 {
+    font-size: 2.2rem;
+  }
+  .thought {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__h2 {
+    font-size: 1.8rem;
+  }
+  .thought {
+    color: #fdfdfd;
+    font-size: 0.6rem;
+  }
+}
+
+/* Grid container */
+.herb-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Herb card with glassmorphic style */
+.herb-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: transparent;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover animation */
+.herb-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(34, 139, 34, 0.25);
+}
+
+/* Reverse layout for alternating effect */
+.herb-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Image styling */
+.herb-img img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0px 6px 16px rgba(0,0,0,0.25);
+}
+
+/* Herb info */
+.herb-info {
+  flex: 1;
+  color: #2e2e2e;
+}
+
+.herb-info h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  color: #2e5e2e; /* Ayurvedic green */
+}
+
+.herb-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+  color: #3a3a3a;
+}
+
+.herb-info a {
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: #b8860b; /* Golden brown */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.herb-info a:hover {
+  color: #228b22; /* Forest green */
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .herb-card, 
+  .herb-card.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .herb-img img {
+    width: 100%;
+    height: auto;
+    max-width: 280px;
+  }
+}
+
+

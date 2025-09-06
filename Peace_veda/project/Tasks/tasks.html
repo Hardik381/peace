@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayurveda Weekly To-Do 🌿</title>
+  <link rel="stylesheet" href="tasks.css">
+  <script type="module" src="./tasksfire.js"></script>
+</head>
+<body>  
+  <nav>
+    <ul>
+      <div class="title">PEACE_VEDA</div>
+      <div class="options">
+        <li><a href="../homepage/homepage.html">Home</a></li>
+        <li><a href="../Advancement/index.html">Advancement</a></li>
+        <li><a href="../Panchakarma/panchkarma.html">Panchakarma</a></li>
+        <li><a href="#feedback">feedback</a></li>
+        <li><a href="#About">About</a></li>
+      </div>
+    </ul>
+  </nav>
+
+  <h1>🌿 Dinacharya- Ayurveda Daily Routine</h1>
+
+  <div class="progress-container">
+    <p><b>Weekly Progress:</b> <span id="totalScore">0</span> / 350 Points</p>
+    <div class="progress-bar"><div class="progress" id="progress"></div></div>
+  </div>
+
+  <!-- Example Day (Repeat for all days) -->
+  <div class="day">
+    <div class="day-header" onclick="toggleDay(this)">Monday <span>▼</span></div>
+    <div class="day-content">
+      <ul>
+        <li><span>🌞 Morning Yoga (20 min)</span><button onclick="markDone(this,10,'Monday')">+10</button>
+</li>
+        <li><span>🍵 Herbal Tea</span><button onclick="markDone(this,5,'Monday')">+5</button></li>
+        <li><span>🥗 Eat Fresh Fruits</span><button onclick="markDone(this,5,'Monday')">+5</button></li>
+        <li><span>😴 Sleep Early</span><button onclick="markDone(this,20,'Monday')">+20</button></li>
+      </ul>
+    </div>
+  </div>
+  <div class="day">
+    <div class="day-header" onclick="toggleDay(this)">Tuesday <span>▼</span></div>
+    <div class="day-content">
+      <ul>
+        <li><span>🌞 Surya Namaskar (15 min)</span><button onclick="markDone(this,10,'Tuesday')">+10</button></li>
+        <li><span>📿 Meditation (10 min)</span><button onclick="markDone(this,15,'Tuesday')">+15</button></li>
+        <li><span>🥛 Warm Turmeric Milk</span><button onclick="markDone(this,15,'Tuesday')">+15</button></li>
+        <li><span>🚶 Evening Walk</span><button onclick="markDone(this,10,'Tuesday')">+10</button></li>
+      </ul>
+    </div>
+  </div>
+
+   <div class="day">
+    <div class="day-header" onclick="toggleDay(this)">Wednesday <span>▼</span></div>
+    <div class="day-content">
+      <ul>
+        <li><span>🌞 Morning Pranayama</span><button onclick="markDone(this,15,'Wednesday')">+15</button></li>
+        <li><span>🍵 Tulsi-Ginger Tea</span><button onclick="markDone(this,10,'Wednesday')">+10</button></li>
+        <li><span>🥗 Seasonl Veg Lunch</span><button onclick="markDone(this,10,'Wednesday')">+10</button></li>
+        <li><span>📵 Digital Detox Before Bed</span><button onclick="markDone(this,5,'Wednesday')">+5</button></li>
+      </ul>
+    </div>
+  </div>
+
+   <div class="day">
+    <div class="day-header" onclick="toggleDay(this)">Thursday <span>▼</span></div>
+    <div class="day-content">
+      <ul>
+        <li><span>🧘‍♀ Yoga Stretching (10min)</span><button onclick="markDone(this,10,'Thursday')">+10</button></li>
+        <li><span> Meditation(15min)</span><button onclick="markDone(this,15,'Thursday')">+15</button></li>
+        <li><span>🥗 Light Dinner</span><button onclick="markDone(this,10,'Thursday')">+10</button></li>
+        <li><span>😴 Sleep Early</span><button onclick="markDone(this,20,'Thursday')">+20</button></li>
+      </ul>
+    </div>
+  </div>
+
+   <div class="day">
+    <div class="day-header" onclick="toggleDay(this)">Friday <span>▼</span></div>
+    <div class="day-content">
+      <ul>
+        <li><span>🌞 Surya Namaskar (15 min)</span><button onclick="markDone(this,20,'Friday')">+20</button></li>
+        <li><span>🍵 Herbal Kadha</span><button onclick="markDone(this,15,'Friday')">+15</button></li>
+        <li><span>🥗 Green Veg Salad</span><button onclick="markDone(this,10,'Friday')">+10</button></li>
+        <li><span>🧘‍♀ Evening Meditation</span><button onclick="markDone(this,15,'Friday')">+15</button></li>
+      </ul>
+    </div>
+  </div>
+
+   <div class="day">
+    <div class="day-header" onclick="toggleDay(this)">Saturday <span>▼</span></div>
+    <div class="day-content">
+      <ul>
+        <li><span>🌞 Morning Breathing</span><button onclick="markDone(this,10,'Saturday')">+10</button></li>
+        <li><span>🚶‍♀ Long Nature Walk</span><button onclick="markDone(this,15,'Saturday')">+15</button></li>
+        <li><span>📚 Read Ayurveda/Journaling</span><button onclick="markDone(this,10,'Saturday')">+10</button></li>
+        <li><span>🥛 Ashwaganda Milk</span><button onclick="markDone(this,15,'Saturday')">+15</button></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-header" onclick="toggleDay(this)">Sunday <span>▼</span></div>
+    <div class="day-content">
+      <ul>
+        <li><span>🌞 Morning Meditation(15min)</span><button onclick="markDone(this,10,'Sunday')">+10</button></li>
+        <li><span>🥣Light Breakfast</span><button onclick="markDone(this,15,'Sunday')">+15</button></li>
+        <li><span>🍵 Green Herbal Tea </span><button onclick="markDone(this,10,'Sunday')">+10</button></li>
+        <li><span>😴 Rest & Sleep </span><button onclick="markDone(this,20,'Sunday')">+10</button></li>
+      </ul>
+    </div>
+  </div>
+  <script src="tasks.js"></script>
+</body>
+</html>
